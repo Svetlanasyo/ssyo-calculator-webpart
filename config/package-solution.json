@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ssyo-calculator-webpart-client-side-solution",
+    "id": "85a16427-681f-4810-8c99-ec83498eabde",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/ssyo-calculator-webpart.sppkg"
+  }
+}
