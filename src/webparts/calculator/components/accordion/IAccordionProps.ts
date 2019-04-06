@@ -1,3 +1,5 @@
 export interface IAccordionProps {
-    description: string;
+    results1: string;
+    results2: string;
+    results3: string;
   }
