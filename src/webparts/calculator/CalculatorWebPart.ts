@@ -43,6 +43,7 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
 
   protected onDispose(): void {
     ReactDom.unmountComponentAtNode(this.domElement);
+    this.properties.resultStack = [];
   }
 
   protected get dataVersion(): Version {
@@ -59,7 +60,7 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
       case strings.MinusOperation: { 
         sum = (this.properties.x - this.properties.y)+'';
         break; 
-      } 
+      
       case strings.DevisionOperation: { 
         if (this.properties.y !== 0) {
           sum = (this.properties.x/this.properties.y)+'';  
@@ -68,6 +69,7 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
         }
         break; 
       }
+
       case strings.RemOfDiv: { 
         if (this.properties.y !== 0) {
           sum = (this.properties.x%this.properties.y)+'';  
@@ -76,7 +78,12 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
         }
         break;
       }
+
       case strings.MultiOperation: {
+        sum = (this.properties.x * this.properties.y)+'';
+        break; 
+      }
+      case strings.MultiplicationOperation: {
         sum = (this.properties.x * this.properties.y)+'';
         break; 
       }
@@ -104,14 +111,14 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyFieldNumber("x", {
-                  key: "x",
+                PropertyFieldNumber(strings.XFieldKey, {
+                  key: strings.XFieldKey,
                   label: strings.XFieldLabel,
                   description: strings.XFieldLabel,
                   disabled: false
                 }),
-                PropertyFieldNumber("y", {
-                  key: "y",
+                PropertyFieldNumber(strings.YFieldKey, {
+                  key: strings.YFieldKey,
                   label: strings.YFieldLabel,
                   description: strings.YFieldLabel,
                   disabled: false
