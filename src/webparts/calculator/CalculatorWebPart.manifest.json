@@ -21,7 +21,7 @@
     "description": { "default": "calculator description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "calculator"
+      "description": "Calculator"
     }
   }]
 }
