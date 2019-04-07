@@ -12,7 +12,7 @@ export default class Calculator extends React.Component<ICalculatorProps> {
           <div className={ styles.row }>
             <div className={ styles.column }>
             <h1>{this.props.description}</h1>
-              <Accordion results1='123' results2='234' results3='345'/>
+              <Accordion results1={this.props.resultStack.pop()} results2={this.props.resultStack.pop()} results3={this.props.resultStack.pop()}/>
             </div>
           </div>
         </div>

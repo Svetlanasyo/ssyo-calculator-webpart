@@ -26,7 +26,8 @@
     "jquery": "^2.2.4",
     "jqueryui": "^1.11.1",
     "react": "16.7.0",
-    "react-dom": "16.7.0"
+    "react-dom": "16.7.0",
+    "stack-typescript": "^1.0.4"
   },
   "resolutions": {
     "@types/react": "16.4.2"

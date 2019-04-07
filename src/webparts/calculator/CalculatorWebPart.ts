@@ -18,6 +18,7 @@ export interface ICalculatorWebPartProps {
   choiceGroupWithCalloutValue: string;
   x: number;
   y: number;
+  resultStack: string[];
 
 }
 
@@ -32,7 +33,8 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
     const element: React.ReactElement<ICalculatorProps > = React.createElement(
       Calculator,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        resultStack: this.addToResults()
       }
     );
 
@@ -45,6 +47,50 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
 
   protected get dataVersion(): Version {
     return Version.parse('1.0');
+  }
+
+  protected addToResults(): string[] {
+    let sum: string;
+    switch(this.properties.choiceGroupWithCalloutValue) { 
+      case 'plus': { 
+         sum = (this.properties.x + this.properties.y)+'';
+         break; 
+      } 
+      case 'minus': { 
+        sum = (this.properties.x - this.properties.y)+'';
+        break; 
+      } 
+      case 'division': { 
+        if (this.properties.y !== 0) {
+          sum = (this.properties.x/this.properties.y)+'';  
+        } else {
+          sum = 'Y value cannot be equal 0';
+        }
+        break; 
+      }
+      case 'remofdivision': { 
+        if (this.properties.y !== 0) {
+          sum = (this.properties.x%this.properties.y)+'';  
+        } else {
+          sum = 'Y value cannot be equal 0';
+        }
+        break;
+      }
+      case 'multiplication': {
+        sum = (this.properties.x * this.properties.y)+'';
+        break; 
+      }
+      case 'pi': {
+        sum = '3,14';
+        break; 
+      }
+      default: { 
+         sum = '0';
+         break; 
+      } 
+   } 
+    this.properties.resultStack.push(sum);
+    return this.properties.resultStack.slice(-3);
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
