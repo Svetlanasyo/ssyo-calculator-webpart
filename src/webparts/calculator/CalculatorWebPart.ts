@@ -43,6 +43,7 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
 
   protected onDispose(): void {
     ReactDom.unmountComponentAtNode(this.domElement);
+    this.properties.resultStack = [];
   }
 
   protected get dataVersion(): Version {
@@ -52,35 +53,35 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
   protected addToResults(): string[] {
     let sum: string;
     switch(this.properties.choiceGroupWithCalloutValue) { 
-      case 'plus': { 
+      case strings.PlusOperation: { 
          sum = (this.properties.x + this.properties.y)+'';
          break; 
       } 
-      case 'minus': { 
+      case strings.MinusOperation: { 
         sum = (this.properties.x - this.properties.y)+'';
         break; 
       } 
-      case 'division': { 
+      case strings.DivisionOperation: { 
         if (this.properties.y !== 0) {
           sum = (this.properties.x/this.properties.y)+'';  
         } else {
-          sum = 'Y value cannot be equal 0';
+          sum = strings.ErrorDivisionMessage;
         }
         break; 
       }
-      case 'remofdivision': { 
+      case strings.RemOfdivOperation: { 
         if (this.properties.y !== 0) {
           sum = (this.properties.x%this.properties.y)+'';  
         } else {
-          sum = 'Y value cannot be equal 0';
+          sum = strings.ErrorDivisionMessage;
         }
         break;
       }
-      case 'multiplication': {
+      case strings.MultiplicationOperation: {
         sum = (this.properties.x * this.properties.y)+'';
         break; 
       }
-      case 'pi': {
+      case strings.PiOperation: {
         sum = '3,14';
         break; 
       }
@@ -104,47 +105,47 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyFieldNumber("x", {
-                  key: "x",
+                PropertyFieldNumber(strings.XFieldKey, {
+                  key: strings.XFieldKey,
                   label: strings.XFieldLabel,
                   description: strings.XFieldLabel,
                   disabled: false
                 }),
-                PropertyFieldNumber("y", {
-                  key: "y",
+                PropertyFieldNumber(strings.YFieldKey, {
+                  key: strings.YFieldKey,
                   label: strings.YFieldLabel,
                   description: strings.YFieldLabel,
                   disabled: false
                 }),
-                PropertyFieldChoiceGroupWithCallout('choiceGroupWithCalloutValue', {
-                  calloutContent: React.createElement('div', {}, 'Select preferrable mobile platform'),
+                PropertyFieldChoiceGroupWithCallout(strings.ChoiceGroupWithCalloutValue, {
+                  calloutContent: React.createElement('div', {}, 'Select operation'),
                   calloutTrigger: CalloutTriggers.Hover,
-                  key: 'choiceGroupWithCalloutFieldId',
+                  key: strings.ChoiceGroupFieldID,
                   label: strings.ChoiceGroupLabel,
                   options: [{
-                    key: 'plus',
-                    text: 'plus',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'plus'
+                    key: strings.PlusOperation,
+                    text: strings.PlusOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.PlusOperation
                   }, {
-                    key: 'minus',
-                    text: 'minus',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'minus'
+                    key: strings.MinusOperation,
+                    text: strings.MinusOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.MinusOperation
                   }, {
-                    key: 'division',
-                    text: 'division',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'division'
+                    key: strings.DivisionOperation,
+                    text: strings.DivisionOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.DivisionOperation
                   },  {
-                    key: 'remofdivision',
-                    text: 'remainder of the division',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'remofdivision'
+                    key: strings.RemOfdivOperation,
+                    text: strings.RemOfdivOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.RemOfdivOperation
                   }, {
-                    key: 'multiplication',
-                    text: 'multiplication',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'multiplication'
+                    key: strings.MultiplicationOperation,
+                    text: strings.MultiplicationOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.MinusOperation
                   }, {
-                    key: 'pi',
-                    text: 'PI',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'pi'
+                    key: strings.PiOperation,
+                    text: strings.PiOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.PiOperation
                   }]
                 })
               ]
