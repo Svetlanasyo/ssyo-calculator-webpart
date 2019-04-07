@@ -2,6 +2,8 @@ declare interface ICalculatorWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
+  XFieldLabel: string;
+  YFieldLabel: string;
 }
 
 declare module 'CalculatorWebPartStrings' {
