@@ -19,7 +19,7 @@
     "group": { "default": "Other" },
     "title": { "default": "calculator" },
     "description": { "default": "calculator description" },
-    "officeFabricIconFontName": "Page",
+    "officeFabricIconFontName": "Calculator",
     "properties": {
       "description": "calculator",
       "choiceGroupWithCalloutValue": "",

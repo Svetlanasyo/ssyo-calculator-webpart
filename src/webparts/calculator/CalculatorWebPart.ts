@@ -52,35 +52,35 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
   protected addToResults(): string[] {
     let sum: string;
     switch(this.properties.choiceGroupWithCalloutValue) { 
-      case 'plus': { 
+      case strings.PlusOperation: { 
          sum = (this.properties.x + this.properties.y)+'';
          break; 
       } 
-      case 'minus': { 
+      case strings.MinusOperation: { 
         sum = (this.properties.x - this.properties.y)+'';
         break; 
       } 
-      case 'division': { 
+      case strings.DevisionOperation: { 
         if (this.properties.y !== 0) {
           sum = (this.properties.x/this.properties.y)+'';  
         } else {
-          sum = 'Y value cannot be equal 0';
+          sum = strings.ErrorDivisionMessage;
         }
         break; 
       }
-      case 'remofdivision': { 
+      case strings.RemOfDiv: { 
         if (this.properties.y !== 0) {
           sum = (this.properties.x%this.properties.y)+'';  
         } else {
-          sum = 'Y value cannot be equal 0';
+          sum = strings.ErrorDivisionMessage;
         }
         break;
       }
-      case 'multiplication': {
+      case strings.MultiOperation: {
         sum = (this.properties.x * this.properties.y)+'';
         break; 
       }
-      case 'pi': {
+      case strings.PiValue: {
         sum = '3,14';
         break; 
       }
@@ -116,35 +116,35 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
                   description: strings.YFieldLabel,
                   disabled: false
                 }),
-                PropertyFieldChoiceGroupWithCallout('choiceGroupWithCalloutValue', {
-                  calloutContent: React.createElement('div', {}, 'Select preferrable mobile platform'),
+                PropertyFieldChoiceGroupWithCallout(strings.ChoiceGroupWithCalloutValue, {
+                  calloutContent: React.createElement('div', {}, 'Select operation'),
                   calloutTrigger: CalloutTriggers.Hover,
-                  key: 'choiceGroupWithCalloutFieldId',
+                  key: strings.ChoiceGroupWithCalloutFieldId,
                   label: strings.ChoiceGroupLabel,
                   options: [{
-                    key: 'plus',
-                    text: 'plus',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'plus'
+                    key: strings.PlusOperation,
+                    text: strings.PlusOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.PlusOperation
                   }, {
-                    key: 'minus',
-                    text: 'minus',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'minus'
+                    key: strings.MinusOperation,
+                    text: strings.MinusOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.MinusOperation
                   }, {
-                    key: 'division',
-                    text: 'division',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'division'
+                    key: strings.DevisionOperation,
+                    text: strings.DevisionOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.DevisionOperation
                   },  {
-                    key: 'remofdivision',
-                    text: 'remainder of the division',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'remofdivision'
+                    key: strings.RemOfDiv,
+                    text: strings.RemOfDiv,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.RemOfDiv
                   }, {
-                    key: 'multiplication',
-                    text: 'multiplication',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'multiplication'
+                    key: strings.MultiOperation,
+                    text: strings.MultiOperation,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.MultiOperation
                   }, {
-                    key: 'pi',
-                    text: 'PI',
-                    checked: this.properties.choiceGroupWithCalloutValue === 'pi'
+                    key: strings.PiValue,
+                    text: strings.PiValue,
+                    checked: this.properties.choiceGroupWithCalloutValue === strings.PiValue
                   }]
                 })
               ]
