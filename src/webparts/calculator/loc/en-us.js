@@ -4,6 +4,7 @@ define([], function() {
     "BasicGroupName": "Group Name",
     "DescriptionFieldLabel": "Description Field",
     "XFieldLabel": "X Field",
-    "YFieldLabel": "Y Field"
+    "YFieldLabel": "Y Field",
+    "ChoiceGroupLabel": "Choose Operation"
   }
 });

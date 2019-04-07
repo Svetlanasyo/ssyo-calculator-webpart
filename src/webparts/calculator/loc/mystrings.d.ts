@@ -4,6 +4,7 @@ declare interface ICalculatorWebPartStrings {
   DescriptionFieldLabel: string;
   XFieldLabel: string;
   YFieldLabel: string;
+  ChoiceGroupLabel: string;
 }
 
 declare module 'CalculatorWebPartStrings' {

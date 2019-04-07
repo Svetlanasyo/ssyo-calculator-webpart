@@ -22,6 +22,7 @@
     "officeFabricIconFontName": "Page",
     "properties": {
       "description": "calculator",
+      "choiceGroupWithCalloutValue": "",
       "x": 0,
       "y": 0
     }
