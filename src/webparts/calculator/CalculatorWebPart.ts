@@ -60,7 +60,7 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
       case strings.MinusOperation: { 
         sum = (this.properties.x - this.properties.y)+'';
         break; 
-      
+      }
       case strings.DevisionOperation: { 
         if (this.properties.y !== 0) {
           sum = (this.properties.x/this.properties.y)+'';  
@@ -83,7 +83,7 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
         sum = (this.properties.x * this.properties.y)+'';
         break; 
       }
-      case strings.MultiplicationOperation: {
+      case strings.MultiOperation: {
         sum = (this.properties.x * this.properties.y)+'';
         break; 
       }
