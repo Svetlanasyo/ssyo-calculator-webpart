@@ -16,6 +16,7 @@
     "jqueryui":"node_modules/jqueryui/jquery-ui.min.js"
   },
   "localizedResources": {
-    "CalculatorWebPartStrings": "lib/webparts/calculator/loc/{locale}.js"
+    "CalculatorWebPartStrings": "lib/webparts/calculator/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
   }
 }
