@@ -7,17 +7,15 @@ declare interface ICalculatorWebPartStrings {
   XFieldKey: string;
   YFieldKey: string;
   ChoiceGroupLabel: string;
-  ErrorDivisionMessage: string;
   PlusOperation: string;
   MinusOperation: string;
-  DivisionOperation: string;
-  MultiplicationOperation: string;
-  PiOperation: string;
-  RemOfdivOperation: string;
-  ChoiceGroupFieldID: string;
+  DevisionOperation: string;
+  ErrorDivisionMessage: string;
+  RemOfDiv: string;
+  MultiOperation: string;
+  PiValue: string;
   ChoiceGroupWithCalloutValue: string;
-
-
+  ChoiceGroupWithCalloutFieldId: string;
 }
 
 declare module 'CalculatorWebPartStrings' {

@@ -3,19 +3,19 @@ define([], function() {
     "PropertyPaneDescription": "Description",
     "BasicGroupName": "Group Name",
     "DescriptionFieldLabel": "Description Field",
-    "XFieldLabel": "X Field",
-    "YFieldLabel": "Y Field",
+    "XFieldLabel": "Enter first number",
+    "YFieldLabel": "Enter second number",
     "XFieldKey": "x",
     "YFieldKey": "y",
     "ChoiceGroupLabel": "Choose Operation",
-    "ErrorDivisionMessage": "Y value cannot be equal 0",
     "PlusOperation": "plus",
     "MinusOperation": "minus",
-    "DivisionOperation": "division",
-    "MultiplicationOperation": "multiplication",
-    "PiOperation": "Pi",
-    "RemOfDivOperation": "Reminder of the division",
-    "ChoiceGroupFieldID": "ChoiceGroupWithCalloutFieldID",
-    "ChoiceGroupWithCalloutValue": "ChoiceGroupWithCalloutValue"
+    "DevisionOperation": "devision",
+    "ErrorDivisionMessage": "Value of second number can not be equal 0",
+    "RemOfDiv": "Reminder of division",
+    "MultiOperation": "multiplication",
+    "PiValue": "PI value",
+    "ChoiceGroupWithCalloutValue": "choiceGroupWithCalloutValue",
+    "ChoiceGroupWithCalloutFieldId": "choiceGroupWithCalloutFieldId"
   }
 });
