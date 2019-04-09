@@ -11,8 +11,7 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 export class Accordion extends React.Component<IAccordionProps> {
 
     public componentDidMount() {
-
-        SPComponentLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+        SPComponentLoader.loadCss('/styles/jquery-ui-1.11.4.custom/jquery-ui.theme.css');
 
         const accordionOptions: JQueryUI.AccordionOptions = {
             animate: true,
