@@ -12,8 +12,6 @@ export class Accordion extends React.Component<IAccordionProps> {
 
     public componentDidMount() {
 
-        SPComponentLoader.loadCss('//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
-
         const accordionOptions: JQueryUI.AccordionOptions = {
             animate: true,
             collapsible: false,
