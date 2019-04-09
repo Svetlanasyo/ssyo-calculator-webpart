@@ -13,7 +13,7 @@
   },
   "externals": {
     "jquery":"node_modules/jquery/dist/jquery.min.js",
-    "jqueryui":"node_modules/jqueryui/jquery-ui.min.js"
+    "jqueryui":"styles/jquery-ui-1.11.4.custom/jquery-ui.min.js"
   },
   "localizedResources": {
     "CalculatorWebPartStrings": "lib/webparts/calculator/loc/{locale}.js",
