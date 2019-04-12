@@ -4,6 +4,7 @@ import { escape } from '@microsoft/sp-lodash-subset';
 import * as jQuery from 'jquery';
 import 'jqueryui';
 import { SPComponentLoader } from '@microsoft/sp-loader';
+import styles from '../Calculator.module.scss';
 
 
 
@@ -28,7 +29,7 @@ export class Accordion extends React.Component<IAccordionProps> {
   public render(): React.ReactElement<IAccordionProps> {
 
     return (
-              <div className="accordion">
+              <div className={styles.accordion + " accordion"}>
                 <h3>Wynik 1</h3>
                 <div>
                     <p>
