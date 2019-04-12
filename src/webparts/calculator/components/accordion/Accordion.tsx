@@ -3,7 +3,7 @@ import { IAccordionProps } from './IAccordionProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import * as jQuery from 'jquery';
 import 'jqueryui';
-import { SPComponentLoader } from '@microsoft/sp-loader';
+import './../../../../../styles/jquery-ui-1.11.4.custom/jquery-ui.css';
 import styles from '../Calculator.module.scss';
 
 
@@ -12,7 +12,7 @@ import styles from '../Calculator.module.scss';
 export class Accordion extends React.Component<IAccordionProps> {
 
     public componentDidMount() {
-        SPComponentLoader.loadCss('/styles/jquery-ui-1.11.4.custom/jquery-ui.theme.css');
+        
 
         const accordionOptions: JQueryUI.AccordionOptions = {
             animate: true,
