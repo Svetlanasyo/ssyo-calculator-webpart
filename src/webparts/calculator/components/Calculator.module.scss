@@ -1,5 +1,7 @@
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 
+$ms-color-lightTheme: white;
+
 .calculator {
   .accordion {
     p {
@@ -21,7 +23,7 @@
   .row {
     @include ms-Grid-row;
     @include ms-fontColor-white;
-    background-color: $ms-color-themeDark;
+    background-color: $ms-color-lightTheme;
     padding: 20px;
   }
 
@@ -29,6 +31,7 @@
     h1 {
       text-align: center;
       margin: 0.4em;
+      color: $ms-color-themePrimary;
     }
     @include ms-Grid-col;
     @include ms-lg11;
