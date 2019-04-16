@@ -25,9 +25,11 @@
     "@types/webpack-env": "1.13.1",
     "jquery": "^2.2.4",
     "jqueryui": "^1.11.1",
+    "office-ui-fabric-react": "^5.135.0",
     "react": "16.7.0",
     "react-dom": "16.7.0",
-    "stack-typescript": "^1.0.4"
+    "stack-typescript": "^1.0.4",
+    "styled-components": "^4.2.0"
   },
   "resolutions": {
     "@types/react": "16.4.2"

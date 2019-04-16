@@ -7,8 +7,8 @@ import {
 } from '@microsoft/sp-property-pane';
 
 import * as strings from 'CalculatorWebPartStrings';
-import Calculator from './components/Calculator';
-import { ICalculatorProps } from './components/ICalculatorProps';
+import {Accordion} from './components/Accordion';
+import { IAccordionProps } from './components/IAccordionProps';
 import { PropertyFieldNumber } from '@pnp/spfx-property-controls/lib/PropertyFieldNumber';
 import { CalloutTriggers } from '@pnp/spfx-property-controls/lib/Callout';
 import { PropertyFieldChoiceGroupWithCallout } from '@pnp/spfx-property-controls/lib/PropertyFieldChoiceGroupWithCallout';
@@ -30,8 +30,8 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
   }
 
   public render(): void {
-    const element: React.ReactElement<ICalculatorProps > = React.createElement(
-      Calculator,
+    const element: React.ReactElement<IAccordionProps > = React.createElement(
+      Accordion,
       {
         description: this.properties.description,
         resultStack: this.addToResults()
@@ -97,7 +97,7 @@ export default class CalculatorWebPart extends BaseClientSideWebPart<ICalculator
       } 
    } 
     this.properties.resultStack.push(sum);
-    return this.properties.resultStack.slice(-3);
+    return this.properties.resultStack;
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
