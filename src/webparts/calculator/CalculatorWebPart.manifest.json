@@ -21,7 +21,7 @@
     "description": { "default": "calculator description" },
     "officeFabricIconFontName": "Calculator",
     "properties": {
-      "description": "Calculator",
+      "description": "Kalkulator",
       "choiceGroupWithCalloutValue": "",
       "x": 0,
       "y": 0,

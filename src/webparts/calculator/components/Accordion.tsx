@@ -47,16 +47,16 @@ export class Accordion extends React.Component<IAccordionProps, IAccordionState>
                 <h3>{this.props.description}</h3>
                 <div>
                   <TextField 
-                    label="First number"
+                    label="Pierwsza liczba"
                     type="number"
                     onChanged={value => this.setState({firstNumber: Number(value)})}
-                    placeholder="Enter number"
+                    placeholder="Wprowadż liczbę"
                   />
                   <TextField
-                   label="Second number"
+                   label="Druga liczba"
                    type="number"
                    onChanged={value => this.setState({secondNumber: Number(value)})}
-                   placeholder="Enter number"
+                   placeholder="Wprowadż liczbę"
                   />
                   <br/>
                   <div>
@@ -141,7 +141,7 @@ export class Accordion extends React.Component<IAccordionProps, IAccordionState>
       this.props.resultStack.push(result+'');
       this.forceUpdate();
     } else {
-    alert('Please fill all data');
+    alert('Wszystkie pola powinny być uzupełnione');
     }
   }
 
@@ -150,13 +150,13 @@ private divide(operation: (num1: number, num2: number) => number) {
   let first: number = this.state.firstNumber;
   let second: number = this.state.secondNumber;
   if (second == 0) {
-    alert('Second number can not be 0')
+    alert('Wartość drugiej liczby nie może być równa 0')
   } else if (this.isInputNotEmpty()) {
     let result = operation(first, second)
     this.props.resultStack.push(result+'');
     this.forceUpdate();
   } else {
-  alert('Please fill all data');
+  alert('Wszystkie pola powinny być uzupełnione');
   }
 }
 }
