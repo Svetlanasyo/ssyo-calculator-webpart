@@ -12,7 +12,7 @@
     }
   },
   "externals": {
-    "jquery":"node_modules/jquery/dist/jquery.min.js",
+    "jquery":"https://code.jquery.com/jquery-2.2.4.min.js",
     "jqueryui":"styles/jquery-ui-1.11.4.custom/jquery-ui.min.js"
   },
   "localizedResources": {
